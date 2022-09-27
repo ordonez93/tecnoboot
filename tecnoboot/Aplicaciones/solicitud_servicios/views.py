@@ -8,3 +8,6 @@ from django.template.loader import get_template
 def inicio(request):
     
     return render(request,"inicio.html")
+
+def nuevo_servicio(request):
+    pass
