@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from Aplicaciones.solicitud_servicios.views import *
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/',inicio),
+    
 ]
