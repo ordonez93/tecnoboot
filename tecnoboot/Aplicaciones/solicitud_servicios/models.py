@@ -17,7 +17,7 @@ class clientes(models.Model):
 class servicios(models.Model):
     id=models.AutoField(primary_key=True)
     servicio = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=100)
+    descripcion = models.TextField()
     precio = models.IntegerField()
 
     def __str__(self):
@@ -31,7 +31,7 @@ class solicitud(models.Model):
     estado = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.estado
+        return self.cliente.nombre
 
 class cobros(models.Model):
     id=models.AutoField(primary_key=True)
