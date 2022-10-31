@@ -26,3 +26,6 @@ def solicitarServicio(request):
         return HttpResponse("Solicitud enviada")
     else:
         return HttpResponse("No se pudo enviar la solicitud")
+
+def acercade(request):
+    return render(request,"aboutus.html")

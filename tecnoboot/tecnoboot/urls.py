@@ -22,5 +22,6 @@ urlpatterns = [
     path('',inicio),
     path('admin/', admin.site.urls),
     path('solicitarServicio/',solicitarServicio),
+    path('acercade/',acercade),
       
 ]
