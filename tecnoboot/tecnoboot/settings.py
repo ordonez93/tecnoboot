@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-b#--2npp&q*^_u@3nth9a)%!sqf(-*ev-2*=@zi3elyu-0(y2@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.103']
 
 
 # Application definition
@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'tecnoboot',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': 'localhost',
+        'HOST': '192.168.0.103',
         'DATABASE_PORT': '3306',  
     }
 }
