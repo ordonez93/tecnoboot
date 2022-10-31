@@ -19,7 +19,8 @@ from Aplicaciones.solicitud_servicios.views import *
 
 
 urlpatterns = [
+    path('',inicio),
     path('admin/', admin.site.urls),
-    path('inicio/',inicio),
-    
+    path('solicitarServicio/',solicitarServicio),
+      
 ]

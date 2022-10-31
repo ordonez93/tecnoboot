@@ -7,50 +7,58 @@
 <h1>
     <p class="text-center">Bienvenido a Tecnoboot.</p><br>
 </h1>
+<div class="container">
+<div class="row " >
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8 mb-5">
 
-<div class="container" >
-<form class="mb-3 " action="" id="servicio" style="float: right;">
-    <h4>Contratar un servico técnico</h4>
-    <div class="form-group col-12 mb-4">
-        <label class="form"  for="nombre">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+        <h3 class="py-4">¿sabes que es un mantenimiento preventivo?</h3>
+
+        <h5 class="">Déjanos ilustrarte un poco del tema</h5>
+        <p>En el siguiente video te mostraremos los tipos de mantenimiento y sus beneficios y ahorros a corto y largo plazo</p>
+        <iframe class="card-responsive" width="560" height="315" src="https://www.youtube.com/embed/thij3R43T8c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+        <iframe class="responsive" width="560" height="315" src="https://www.youtube.com/embed/qZnhG4VJ6WY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
     </div>
-    <div class="form-group col-12 mb-4">
-        <label for="apellido">Apellido</label>
-        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <h4>Contratar un servico técnico</h4>
+        <div class="card">
+            <div class="card-body">
+
+                <form action="/solicitarServicio/" method="POST">{% csrf_token %}
+                    <div class="form-group mb-3">
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" minlength="3" required>
+                    </div>
+                    <div class="form-group mb-3">
+                    <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" required>
+                    </div>
+                    <div class="form-group mb-3">
+                    <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Telefono" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" id="ciudad" name="ciudad" class="form-control" placeholder="Ciudad" value="Mocoa" required>
+                        </div>
+                    <div class="form-group mb-3">
+                    <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Dirección" required>
+                    </div>
+                    <div class="form-group mb-3">
+                    <label for="servicio">Servicio</label>
+                        <select class="form-control" id="servicio" name="servicio">
+                            {% for s in servicios %}
+                            <option value="{{ s.id}}">{{ s.servicio }} </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                    <input type="submit" value="Enviar" class="btn btn-primary">
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
     </div>
-    <div class="form-group col-12 mb-4">
-        <label for="ciudad">Ciudad</label>
-        <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad">
-    </div>
-    <div class="form-group col-12 mb-4">
-        <label for="direccion">Dirección</label>
-        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
-    </div>
-    <div class="form-group col-12 mb-4">
-        <label for="telefono">Telefono</label>
-        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
-    </div>
-    <div class="form-group col-12 mb-4">
-        <label for="servicio">Servicio</label>
-        <select class="form-control" id="servicio" name="servicio">
-                {% for s in servicios %}
-                <option value="{{ s.id}}">{{ s.servicio }} </option>
-                {% endfor %}
-        </select>
-    </div>
-    <div class="form-group col-12 mb-4">
-        <label for="descripcion">Descripción</label>
-        <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
 </div>
-<h3>¿sabes que es un mantenimiento preventivo?</h3>
-<h5>Déjanos ilustrarte un poco del tema</h5>
-<p>En el siguiente video te mostraremos los tipos de mantenimiento y sus beneficios y ahorros a corto y largo plazo</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/thij3R43T8c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qZnhG4VJ6WY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+</div>
 {% endblock %}
 

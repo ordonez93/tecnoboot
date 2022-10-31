@@ -27,12 +27,13 @@ class solicitud(models.Model):
     id=models.AutoField(primary_key=True)
     cliente = models.ForeignKey(clientes, on_delete=models.CASCADE)
     servicio = models.ForeignKey(servicios, on_delete=models.CASCADE)
-    sfechahora = models.DateTimeField(auto_now_add=True)
+    sfechahora = models.DateField(auto_now_add=True)
     estado = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.cliente.nombre
-
+        texto="{0} solicitó {1} el {2} a las direccion {3} llamar al {4}"
+        return texto.format(self.cliente.nombre, self.servicio.servicio, self.sfechahora, self.cliente.direccion, self.cliente.telefono)
+        
 class cobros(models.Model):
     id=models.AutoField(primary_key=True)
     solicitud = models.ForeignKey(solicitud, on_delete=models.CASCADE)
