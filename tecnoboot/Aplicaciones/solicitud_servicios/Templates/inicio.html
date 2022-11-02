@@ -45,16 +45,21 @@
                     <label for="servicio">Servicio</label>
                         <select class="form-control" id="servicio" name="servicio">
                             {% for s in servicios %}
-                            <option value="{{ s.id}}">{{ s.servicio }} </option>
+                            <option value='{{ s.id }}'>{{ s.servicio }} </option>                         
                             {% endfor %}
                         </select>
+
+                        <label for="desc"> Descipcion del servicio</label>
+                        <label for="infoservicio"> {{ servicio.descripcion }}</label>
+                        
                     </div>
+                    
                     <div class="form-group mb-3">
                     <input type="submit" value="Enviar" class="btn btn-primary">
                     </div>
 
                 </form>
-
+                
             </div>
         </div>
     </div>

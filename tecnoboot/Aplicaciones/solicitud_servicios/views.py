@@ -27,5 +27,6 @@ def solicitarServicio(request):
     else:
         return HttpResponse("No se pudo enviar la solicitud")
 
+
 def acercade(request):
     return render(request,"aboutus.html")
