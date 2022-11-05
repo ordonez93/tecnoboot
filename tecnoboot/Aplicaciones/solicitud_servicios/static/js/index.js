@@ -15,7 +15,7 @@ const listar= async () => {
 const cargaInicial = async () => {
     await listar();
     servicio.addEventListener("change", () => {
-        console.log(servicio.descripcion);
+        console.log(servicio.id);
     });
 };
 

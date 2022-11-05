@@ -1,4 +1,3 @@
-
 {% extends 'Layout.html' %}
 
 {% block title %} Inicio {% endblock %}
@@ -30,27 +29,35 @@
                     <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" minlength="3" required>
                     </div>
                     <div class="form-group mb-3">
-                    <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" required>
+                    <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" minlength="3" required>
                     </div>
                     <div class="form-group mb-3">
-                    <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Telefono" required>
+                    <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Telefono" minlength="10" required>
                     </div>
                     <div class="form-group mb-3">
-                        <input type="text" id="ciudad" name="ciudad" class="form-control" placeholder="Ciudad" value="Mocoa" required>
+                        <input type="text" id="ciudad" name="ciudad" class="form-control" placeholder="Ciudad" value="Mocoa" minlength="4" required>
                         </div>
                     <div class="form-group mb-3">
-                    <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Dirección" required>
+                    <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Dirección" minlength="5" required>
                     </div>
                     <div class="form-group mb-3">
                     <label for="servicio">Servicio</label>
                         <select class="form-control" id="servicio" name="servicio">
                             {% for s in servicios %}
-                            <option value='{{ s.id }}'>{{ s.servicio }} </option>                         
+                            <option id="opc" value= '{{ s.descripcion }}'>{{ s.servicio }} </option>                         
                             {% endfor %}
                         </select>
-
+                        
                         <label for="desc"> Descipcion del servicio</label>
-                        <label for="infoservicio"> {{ servicio.descripcion }}</label>
+                        <textarea class="form-control" id="desc" name="desc" rows="3" minlength="10" required></textarea>
+                        <script>
+                            var select = document.getElementById('servicio');
+                            var textarea = document.getElementById('desc');
+                            select.addEventListener('change', function(){
+                                textarea.value = this.value;
+                            });                            
+                        </script>
+                        
                         
                     </div>
                     
