@@ -1,11 +1,62 @@
-{% extends 'Layout.html' %}
 
+{% extends 'Layout.html' %}
+{% load static %}
 {% block title %} Inicio {% endblock %}
 
 {% block content %}
-<h1>
-    <p class="text-center">Bienvenido a Tecnoboot.</p><br>
-</h1>
+
+<div class="container mb-5">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'img/imgi.png' %}" height="300">>
+            <div class="carousel-caption d-none d-md-block">
+              
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
 <div class="row " >
     <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8 mb-5">
@@ -40,21 +91,22 @@
                     <div class="form-group mb-3">
                     <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Dirección" minlength="5" required>
                     </div>
+
                     <div class="form-group mb-3">
                     <label for="servicio">Servicio</label>
-                        <select class="form-control" id="servicio" name="servicio">
+                        <select class="form-control " id="servicio" name="servicio">
                             {% for s in servicios %}
                             <option id="opc" value= '{{ s.descripcion }}'>{{ s.servicio }} </option>                         
                             {% endfor %}
                         </select>
-                        
-                        <label for="desc"> Descipcion del servicio</label>
-                        <textarea class="form-control" id="desc" name="desc" rows="3" minlength="10" required></textarea>
+                        <br>
+                        <label class="form-control" rows="3">Aquí verás la descripcion del servico</label>
+                        <textarea class="form-control" id="desc" name="desc" rows="carousel-caption"></textarea>
                         <script>
                             var select = document.getElementById('servicio');
-                            var textarea = document.getElementById('desc');
+                            var informacion = document.getElementById('desc');
                             select.addEventListener('change', function(){
-                                textarea.value = this.value;
+                                informacion.value = this.value;
                             });                            
                         </script>
                         
@@ -72,5 +124,6 @@
     </div>
 </div>
 </div>
+
 {% endblock %}
 
