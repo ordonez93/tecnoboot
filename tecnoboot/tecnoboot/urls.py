@@ -8,5 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('solicitarServicio/',solicitarServicio),
     path('acercade/',acercade),
+    path('pag_servicios/',pag_servicios),
       
 ]

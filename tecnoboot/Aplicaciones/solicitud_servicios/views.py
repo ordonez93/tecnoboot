@@ -30,3 +30,7 @@ def solicitarServicio(request):
 
 def acercade(request):
     return render(request,"aboutus.html")
+
+def pag_servicios(request):
+    listaServicios = servicios.objects.all()
+    return render(request,"servicios.html",{"servicios":listaServicios})
