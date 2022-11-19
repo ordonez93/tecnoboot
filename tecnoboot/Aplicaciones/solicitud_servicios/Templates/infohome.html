@@ -14,6 +14,40 @@
         puede garantizar que cada servicio sea de la mejor calidad y además brindará las recomendaciones puntuales de
         uso en cada una de las visitas, de esta forma ahorras tiempo y dinero.
       </p>
+        <button class="btn btn-outline-primary me-2 mb-2 rounded-pill" id="myBtn">Requiero un Servicio</button>
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Contratar un servico técnico</h2>
+                </div>
+                <div class="modal-body">
+                    {% include 'form_servicio.html' %}
+                </div>
+                <div class="modal-footer">
+                  <h3>Le llameremos a la mayor breveda posible</h3>
+                </div>
+              </div>
+            
+            </div>
+            
+            <script> 
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("myBtn");
+            var span = document.getElementsByClassName("close")[0];
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+            </script>  
+      
     </div>
   </div>
  
