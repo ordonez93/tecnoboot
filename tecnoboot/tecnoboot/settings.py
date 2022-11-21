@@ -27,8 +27,10 @@ SECRET_KEY = 'django-insecure-b#--2npp&q*^_u@3nth9a)%!sqf(-*ev-2*=@zi3elyu-0(y2@
 DEBUG = True
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['192.168.1.6']
+ALLOWED_HOSTS = ['192.168.1.108']
 
+# envio de mensajeria
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 # Application definition
 
 INSTALLED_APPS = [

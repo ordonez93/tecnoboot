@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import Template, context
 from django.template.loader import get_template
 from .models import clientes, servicios, solicitud
+from django.contrib import messages
 import datetime
 # vistas para la aplicacion solicitud_servicios
 
@@ -25,9 +26,11 @@ def solicitarServicio(request):
         solicitudServicio.cliente = cliente
         solicitudServicio.servicio = servicio
         solicitudServicio.save()
-        return HttpResponse("Solicitud enviada")
+        messages.success(request, 'Solicitud enviada con exito!')
+        return redirect(to=inicio)
     else:
-        return HttpResponse("No se pudo enviar la solicitud")
+        messages.error(request, 'la solicitud no se pudo enviar')
+        return redirect(to=inicio)
 
 
 def acercade(request):
