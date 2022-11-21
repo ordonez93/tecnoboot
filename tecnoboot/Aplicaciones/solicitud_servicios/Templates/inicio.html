@@ -3,39 +3,48 @@
 {% block title %} TecnoInfo {% endblock %}
 {% block content %}
 <div class="container">
-    <div class="row " >
+
+    <div class="row mb-5">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" data-bs-interval="4000">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="{% static 'img/baner.png' %}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="{% static 'img/baner.png' %}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="{% static 'img/baner.png' %}" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+
         <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8 mb-5">
-            
-             
             {% include 'infohome.html' %}
-
-            <button  class="btn btn-outline-success me-2 mb-2 rounded-pill" onclick="abrirChat()">Enviar mensaje</button>
-            <script>
-                function abrirChat() {
-                window.open("https://api.whatsapp.com/send?phone=+573153556067");
-                }
-            </script>
-
-            
+           
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 ">
+            <div class="card mb-3 " style="width: 18rem;">
+                <h4 class="card-header bg-dark text-white" style="text-align: center;">Contratar un servico técnico</h4>
+                <div class="card-body ">
+                    {% include 'form_servicio.html' %}
+                </div>
+            </div>
 
         </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 ">
-                <div class="card mb-3 " style="width: 18rem;">
-                    <h4 class="card-header bg-dark text-white" style="text-align: center;">Contratar un servico técnico</h4>
-                    <div class="card-body ">
-                        {% include 'form_servicio.html' %}
-                    </div>
-                </div>
-            
-            </div>
+        
     </div>
 </div>
+<div class="btn-wsp" >
+    <a class="boton-wsp" onclick="abrirChat()"><img class="boton-wsp" src="{% static 'img/whatsapp-img.png' %}"  /></a>
+            <script>
 
+                function abrirChat() {
+                    window.open("https://wa.me/+573153556067?text= Hola, requiero una servicio técnico");
+                }
+            </script>
+</div>
 {% endblock %}
-   
-
-
-
-
-
-
